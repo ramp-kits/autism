@@ -95,9 +95,6 @@ def _check_integrity_atlas(atlas):
         filenames_atlas_expected.sort()
         expected_hash = joblib.hash(filenames_atlas_expected)
 
-        print(filenames_atlas_current)
-        print(filenames_atlas_expected)
-
         if current_hash == expected_hash:
             return
 
@@ -119,10 +116,10 @@ if __name__ == '__main__':
     if atlas == 'all':
         for single_atlas in ATLAS:
             _check_integrity_atlas(single_atlas)
-    elif atlas not in ATLAS:
+    elif atlas in ATLAS:
+        _check_integrity_atlas(atlas)
+    else:
         raise ValueError("'atlas' should be one of {}. Got {} instead."
                          .format(ATLAS, atlas))
-
-    _check_integrity_atlas(atlas)
 
     print('Downloading completed ...')
