@@ -17,9 +17,9 @@ workflow = rw.workflows.FeatureExtractorClassifier()
 
 # FIXME: Add balanced accuracy from scikit-learn
 score_types = [
-    rw.score_types.ROCAUC(name='auc'),
-    rw.score_types.Accuracy(name='acc'),
-    rw.score_types.NegativeLogLikelihood(name='nll'),
+    rw.score_types.ROCAUC(name='auc', precision=3),
+    rw.score_types.Accuracy(name='acc', precision=3),
+    rw.score_types.NegativeLogLikelihood(name='nll', precision=3),
 ]
 
 
