@@ -1,0 +1,24 @@
+language: python
+env:
+  - PYTHON_VERSION=2.7 IPYTHON_KERNEL=python2
+  - PYTHON_VERSION=3.6 IPYTHON_KERNEL=python3
+before_install:
+    - wget -q http://repo.continuum.io/miniconda/Miniconda-3.6.0-Linux-x86_64.sh -O miniconda.sh
+    - chmod +x miniconda.sh
+    - ./miniconda.sh -b -p /home/travis/miniconda
+    - export PATH=/home/travis/miniconda/bin:$PATH
+    - conda update --yes --quiet conda
+install:
+    - conda create -n testenv --yes pip python=$PYTHON_VERSION
+    - source activate testenv
+    - pip install -q flake8 nbconvert[test]
+    - pip install git+https://github.com/paris-saclay-cds/ramp-workflow.git
+    - pip install -r requirements.txt
+script:
+    - flake8 --exclude submissions/error/*.py *.py submissions/*/*.py
+    - ramp_test_submission --submission starting_kit_anatomy
+    - python download_data.py msdl
+    - ramp_test_submission --submission starting_kit_functional
+    - ramp_test_submission --submission combine_anatomy_functional
+notifications:
+email: true
