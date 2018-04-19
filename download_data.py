@@ -12,9 +12,10 @@ try:
 except ImportError:
     from urllib import urlretrieve
 
-import joblib
 import numpy as np
 import pandas as pd
+# import joblib from scikit-learn to avoid an extra dependency
+from sklearn.externals import joblib
 
 ATLAS = ('basc064', 'basc122', 'basc197', 'craddock_scorr_mean',
          'harvard_oxford_cort_prob_2mm', 'msdl', 'power_2011')

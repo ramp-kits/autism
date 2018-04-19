@@ -1,0 +1,14 @@
+name: autism
+channels:
+  - conda-forge
+dependencies:
+  - scipy
+  - numpy
+  - pandas
+  - jupyter
+  - matplotlib
+  - scikit-learn
+  - seaborn
+  - nilearn
+  - pip:
+      - https://api.github.com/repos/paris-saclay-cds/ramp-workflow/zipball/master
