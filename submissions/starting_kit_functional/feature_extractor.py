@@ -14,8 +14,7 @@ class FeatureExtractor():
 
     @staticmethod
     def _load_fmri(fmri_filenames):
-        data_path = './data'
-        return np.array([pd.read_csv(os.path.join(data_path, subject_filename),
+        return np.array([pd.read_csv(subject_filename,
                                      header=None).values
                          for subject_filename in fmri_filenames])
 
