@@ -7,15 +7,16 @@ from sklearn.preprocessing import FunctionTransformer
 from nilearn.connectome import ConnectivityMeasure
 
 
+def _load_fmri(fmri_filenames):
+    """Load time-series extracted from the fMRI using a specific atlas."""
+    return np.array([pd.read_csv(subject_filename,
+                                 header=None).values
+                     for subject_filename in fmri_filenames])
+
+
 class FeatureExtractor():
     def fit(self, X_df, y):
         pass
-
-    @staticmethod
-    def _load_fmri(fmri_filenames):
-        return np.array([pd.read_csv(subject_filename,
-                                     header=None).values
-                         for subject_filename in fmri_filenames])
 
     def transform(self, X_df):
         # get only the time series for the MSDL atlas
@@ -23,7 +24,7 @@ class FeatureExtractor():
         # make a transformer which will load the time series and compute the
         # connectome matrix
         transformer_fmri = make_pipeline(
-            FunctionTransformer(func=self._load_fmri, validate=False),
+            FunctionTransformer(func=_load_fmri, validate=False),
             ConnectivityMeasure(kind='tangent', vectorize=True))
         X_connectome = transformer_fmri.fit_transform(fmri_filenames)
         X_connectome = pd.DataFrame(X_connectome, index=X_df.index)
