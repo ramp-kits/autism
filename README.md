@@ -1,4 +1,4 @@
-# starting kit -- IMPAC IMaging-PsychiAtry Challenge: predicting autism
+# starting kit for the IMaging-PsychiAtry Challenge: predicting autism
 
 [![Build Status](https://travis-ci.org/ramp-kits/autism.svg?branch=master)](https://travis-ci.org/ramp-kits/autism)
 
