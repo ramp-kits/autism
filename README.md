@@ -1,10 +1,10 @@
-# RAMP starting kit on Autism Spectrum Disorder detection
+# starting kit -- IMPAC IMaging-PsychiAtry Challenge: predicting autism
 
 [![Build Status](https://travis-ci.org/ramp-kits/autism.svg?branch=master)](https://travis-ci.org/ramp-kits/autism)
 
 ## Getting started
 
-This starting kit required Python and the following dependencies:
+This starting kit requires Python and the following dependencies:
 
 * `numpy`
 * `scipy`
