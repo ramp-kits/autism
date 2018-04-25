@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 
+from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import FunctionTransformer
 
@@ -14,9 +15,9 @@ def _load_fmri(fmri_filenames):
                      for subject_filename in fmri_filenames])
 
 
-class FeatureExtractor():
+class FeatureExtractor(BaseEstimator, TransformerMixin):
     def fit(self, X_df, y):
-        pass
+        return self
 
     def transform(self, X_df):
         # get only the time series for the MSDL atlas

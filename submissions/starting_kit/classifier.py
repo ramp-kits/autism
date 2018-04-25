@@ -10,6 +10,10 @@ class Classifier(BaseEstimator):
 
     def fit(self, X, y):
         self.clf.fit(X, y)
+        return self
+
+    def predict(self, X, y):
+        return self.clf.predict(X)
 
     def predict_proba(self, X):
         return self.clf.predict_proba(X)

@@ -41,6 +41,18 @@ class Classifier(BaseEstimator):
         self.meta_clf.fit(
             np.concatenate([y_connectome_pred, y_anatomy_pred], axis=1),
             y_validation)
+        return self
+
+    def predict(self, X):
+        X_anatomy = X[[col for col in X.columns if col.startswith('anatomy')]]
+        X_connectome = X[[col for col in X.columns
+                          if col.startswith('connectome')]]
+
+        y_anatomy_pred = self.clf_anatomy.predict_proba(X_anatomy)
+        y_connectome_pred = self.clf_connectome.predict_proba(X_connectome)
+
+        return self.meta_clf.predict(
+            np.concatenate([y_connectome_pred, y_anatomy_pred], axis=1))
 
     def predict_proba(self, X):
         X_anatomy = X[[col for col in X.columns if col.startswith('anatomy')]]
