@@ -31,7 +31,7 @@ CHECKSUM = {
     'basc197':
     '68135bb8e89b5b3653e843745d8e5d0e92876a5536654eaeb9729c9a52ab00e9',
     'craddock_scorr_mean':
-    '2d9d797bcede3387d78ff2903e3bfaeec5a423c784fd646c490cb50de844cc17',
+    '634e0bb07beaae033a0f1615aa885ba4cb67788d4a6e472fd432a1226e01b49b',
     'harvard_oxford_cort_prob_2mm':
     '638559dc4c7de25575edc02e58404c3f2600556239888cbd2e5887316def0e74',
     'msdl':
