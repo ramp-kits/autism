@@ -1,3 +1,5 @@
+# coding: utf-8
+
 from __future__ import print_function
 
 import argparse
@@ -104,6 +106,57 @@ def _check_integrity_atlas(atlas):
     _download_fmri_data(atlas)
 
 
+def fetch_fmri_time_series(atlas='all'):
+    """Fetch the time-series extracted from the fMRI data using a specific
+    atlas.
+
+    Parameters
+    ----------
+    atlas : string, default='all'
+        The name of the atlas used during the extraction. The possibilities
+        are:
+
+        * `'basc064`, `'basc122'`, `'basc197'`: BASC parcellations with 64,
+        122, and 197 regions [1]_;
+        * `'craddock_scorr_mean'`: Ncuts parcellations [2]_;
+        * `'harvard_oxford_cort_prob_2mm'`: Harvard-Oxford anatomical
+        parcellations;
+        * `'msdl'`: MSDL functional atlas [3]_;
+        * `'power_2011'`: Power atlas [4]_.
+
+    Returns
+    -------
+    None
+
+    References
+    ----------
+    .. [1] Bellec, Pierre, et al. "Multi-level bootstrap analysis of stable
+       clusters in resting-state fMRI." Neuroimage 51.3 (2010): 1126-1139.
+
+    .. [2] Craddock, R. Cameron, et al. "A whole brain fMRI atlas generated
+       via spatially constrained spectral clustering." Human brain mapping
+       33.8 (2012): 1914-1928.
+
+    .. [3] Varoquaux, Gaël, et al. "Multi-subject dictionary learning to
+       segment an atlas of brain spontaneous activity." Biennial International
+       Conference on Information Processing in Medical Imaging. Springer,
+       Berlin, Heidelberg, 2011.
+
+    .. [4] Power, Jonathan D., et al. "Functional network organization of the
+       human brain." Neuron 72.4 (2011): 665-678.
+
+    """
+    if atlas == 'all':
+        for single_atlas in ATLAS:
+            _check_integrity_atlas(single_atlas)
+    elif atlas in ATLAS:
+        _check_integrity_atlas(atlas)
+    else:
+        raise ValueError("'atlas' should be one of {}. Got {} instead."
+                         .format(ATLAS, atlas))
+    print('Downloading completed ...')
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description='Download the time series extracted from the '
@@ -114,13 +167,4 @@ if __name__ == '__main__':
                         'all atlases, use "all".'.format(ATLAS))
     atlas = parser.parse_args().atlas
 
-    if atlas == 'all':
-        for single_atlas in ATLAS:
-            _check_integrity_atlas(single_atlas)
-    elif atlas in ATLAS:
-        _check_integrity_atlas(atlas)
-    else:
-        raise ValueError("'atlas' should be one of {}. Got {} instead."
-                         .format(ATLAS, atlas))
-
-    print('Downloading completed ...')
+    fetch_fmri_time_series(atlas)
