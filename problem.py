@@ -17,8 +17,7 @@ workflow = rw.workflows.FeatureExtractorClassifier()
 
 score_types = [
     rw.score_types.ROCAUC(name='auc', precision=3),
-    rw.score_types.BalancedAccuracy(name='acc', precision=3),
-    rw.score_types.NegativeLogLikelihood(name='nll', precision=3),
+    rw.score_types.Accuracy(name='acc', precision=3),
 ]
 
 
