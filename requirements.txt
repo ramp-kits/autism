@@ -1,6 +1,6 @@
 numpy
 scipy
-pandas
+pandas>=0.21
 scikit-learn
 nilearn
 matplotlib
