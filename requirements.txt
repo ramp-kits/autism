@@ -5,3 +5,4 @@ scikit-learn
 nilearn
 matplotlib
 seaborn
+jupyter
