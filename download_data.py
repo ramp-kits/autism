@@ -94,7 +94,7 @@ def _check_integrity_atlas(atlas):
             index_col=0)[atlas].values
         for idx in range(filenames_atlas_expected.size):
             filenames_atlas_expected[idx] = os.path.abspath(
-                os.path.join('data', filenames_atlas_expected[idx]))
+                filenames_atlas_expected[idx])
         filenames_atlas_expected.sort()
         expected_hash = joblib.hash(filenames_atlas_expected)
 
