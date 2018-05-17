@@ -1,0 +1,23 @@
+name: root
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - scipy
+  - numpy
+  - pandas>=0.21
+  - jupyter
+  - matplotlib
+  - scikit-learn>=0.19
+  - seaborn
+  - nilearn
+  - keras
+  - tensorflow
+  - pytorch-cpu
+  - torchvision-cpu
+  - lightgbm
+  - xgboost
+  - catboost
+  - statsmodels
+  - pip:
+      - https://api.github.com/repos/paris-saclay-cds/ramp-workflow/zipball/master
