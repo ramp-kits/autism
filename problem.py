@@ -48,12 +48,15 @@ def _read_data(path, filename):
                                 index_col=0)
     df_fmri_qc = pd.read_csv(os.path.join(path, 'data', 'fmri_qc.csv'),
                              index_col=0)
+    df_fmri_tr = pd.read_csv(os.path.join(path, 'data',
+                                          'fmri_repetition_time.csv'),
+                             index_col=0)
     # rename the columns for the QC to have distinct names
     df_anatomy_qc = df_anatomy_qc.rename(columns={"select": "anatomy_select"})
     df_fmri_qc = df_fmri_qc.rename(columns={"select": "fmri_select"})
 
     X = pd.concat([df_participants, df_anatomy, df_anatomy_qc, df_fmri,
-                   df_fmri_qc], axis=1)
+                   df_fmri_qc, df_fmri_tr], axis=1)
     X = X.loc[subject_id[0]]
     y = X['participants_asd']
     y = y.rename(columns={'participants_asd': _target_column_name})
