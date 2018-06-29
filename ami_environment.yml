@@ -25,3 +25,4 @@ dependencies:
   - pip:
       - https://api.github.com/repos/paris-saclay-cds/ramp-workflow/zipball/master
       - https://api.github.com/repos/parisots/gcn/zipball/master
+      - slidingwindow
