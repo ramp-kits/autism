@@ -12,7 +12,7 @@ class Classifier(BaseEstimator):
         self.clf.fit(X, y)
         return self
 
-    def predict(self, X, y):
+    def predict(self, X):
         return self.clf.predict(X)
 
     def predict_proba(self, X):
