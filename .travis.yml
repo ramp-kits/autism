@@ -15,10 +15,7 @@ install:
     - pip install git+https://github.com/paris-saclay-cds/ramp-workflow.git
     - pip install -r requirements.txt
 script:
-    - flake8 --exclude submissions/error/*.py *.py submissions/*/*.py
-    - ramp_test_submission --submission starting_kit_anatomy
-    - python download_data.py msdl
-    - ramp_test_submission --submission starting_kit_functional
-    - ramp_test_submission --submission combine_anatomy_functional
+    # - flake8 --exclude submissions/error/*.py *.py submissions/*/*.py  # do not test for pep8
+    - ramp_test_submission --submission starting_kit
 notifications:
 email: true
