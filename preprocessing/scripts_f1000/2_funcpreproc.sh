@@ -37,6 +37,13 @@ func_dir=${dir}/session_1/rest_1
 ##---START OF SCRIPT----------------------------------------------------------------------------------------------------##
 ##########################################################################################################################
 
+# setting highpass if useful
+if [[ `perl -e "print 1 / (($TRend - $TRstart) * $TR) < $hp"` ]]; then
+    highpass="-highpass ${hp}"
+else
+    highpass=""
+fi
+
 echo ---------------------------------------
 echo !!!! PREPROCESSING FUNCTIONAL SCAN !!!!
 echo ---------------------------------------
@@ -80,7 +87,9 @@ fslmaths ${rest}_sm.nii.gz -ing 10000 ${rest}_gms.nii.gz -odt float
 
 ##9. Temporal filtering
 echo "Band-pass filtering ${subject}"
-3dFourier -lowpass ${lp} -highpass ${hp} -retrend -prefix ${rest}_filt.nii.gz ${rest}_gms.nii.gz
+cmd="3dFourier -lowpass ${lp} $highpass -retrend -prefix ${rest}_filt.nii.gz ${rest}_gms.nii.gz"
+echo "$cmd"
+eval "$cmd"
 
 ##10.Detrending
 echo "Removing linear and quadratic trends for ${subject}"

@@ -15,7 +15,7 @@
 ####################
 ## directory where you put the scripts downloaded from www.nitrc.org/projects/fcon_1000
 ## e.g. /home/fcon_1000/scripts
-scripts_dir=/pasteur/cinq/rto/data/abide/scripts_abide
+scripts_dir=`dirname $0`
 
 
 ###########################
@@ -25,14 +25,14 @@ scripts_dir=/pasteur/cinq/rto/data/abide/scripts_abide
 ## 2 - single-subject RSFC (requires general preprocessing to be completed)
 ## 3 - ALFF/fALFF (default frequency band of interest is 0.01-0.1Hz)
 ## 4 - Dual Regression
-what_to_do=2
+what_to_do=1
 
 
 #######################
 ## some important names
 #######################
 ## anatomical scan you want to use (no extension)
-anat_name=mprage
+anat_name=anat
 ## resting-state scan you want to use (no extension)
 rest_name=rest
 
@@ -80,7 +80,7 @@ standard_brain=${FSLDIR}/data/standard/MNI152_T1_3mm_brain.nii.gz
 ## - last timepoint = number of timepoints - 1 (since count starts at 0)
 ## - number of timepoints in the timeseries
 ## - TR
-batch_list=${scripts_dir}/batch_list-$1.txt
+batch_list=${scripts_dir}/lists/batch_list-$1
 
 
 
