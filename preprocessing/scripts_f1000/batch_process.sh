@@ -17,7 +17,6 @@
 ## e.g. /home/fcon_1000/scripts
 scripts_dir=`dirname $0`
 
-
 ###########################
 ## what do you want to run?
 ###########################
