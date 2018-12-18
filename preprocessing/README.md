@@ -1,6 +1,17 @@
-# fMRI preprocessing
+# MRI preprocessing
 
-## F1000 scripts
+## Anatomical preprocessing
+Anatomical MRI were segmented with FreeSufer 6.0.0 using the command:
+```
+recon-all -subjid $subjid -i $subjanat -autorecon-all
+```
+We extracted volumes, areas and cortical thicknesses with the script
+`freesurfer/extract-stats.sh`
+
+
+## fMRI preprocessing
+
+### F1000 scripts
 
 The preprocessing pipeline used for the resting-state fMRI data can be found in
 the folder `scripts_f1000`. One can refer to the file
@@ -22,7 +33,8 @@ preprocessing are defined. The preprocessing pipeline is defined in the file
 The original scripts are available at:
 www.nitrc.org/projects/fcon_1000
 
-## Time-series extraction
+### Time-series extraction
 
 The script `extract_time_series.py` was used to extract the time-series from
 the preprocessed fMRI data.
+
