@@ -15,7 +15,7 @@
 ####################
 ## directory where you put the scripts downloaded from www.nitrc.org/projects/fcon_1000
 ## e.g. /home/fcon_1000/scripts
-scripts_dir=/pasteur/cinq/rto/data/abide/scripts_abide
+scripts_dir=TO-BE-DEFINED
 
 
 ###########################
@@ -25,7 +25,7 @@ scripts_dir=/pasteur/cinq/rto/data/abide/scripts_abide
 ## 2 - single-subject RSFC (requires general preprocessing to be completed)
 ## 3 - ALFF/fALFF (default frequency band of interest is 0.01-0.1Hz)
 ## 4 - Dual Regression
-what_to_do=2
+what_to_do=1
 
 
 #######################
