@@ -1,5 +1,10 @@
 # MRI preprocessing
 
+## Files structure
+Anatomical and functional MRI has to be in nifti format and in a specific
+folder organization to be recognized by the fcon_1000 scripts.
+The script `prepare_fcon.py` can be used to organize folders.
+
 ## Anatomical preprocessing
 Anatomical MRI were segmented with FreeSufer 6.0.0 using the command:
 ```
