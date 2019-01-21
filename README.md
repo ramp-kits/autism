@@ -51,3 +51,6 @@ for Linux and MacOS. In Windows, use the following command instead:
 activate autism
 ```
 
+## Launch on Binder
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ramp-kits/autism/best_submissions?filepath=best_submissions.ipynb)
