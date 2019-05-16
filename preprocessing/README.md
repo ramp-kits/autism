@@ -1,5 +1,12 @@
 # MRI preprocessing
 
+## Dependencies
+The preprocessing requires to have FreeSurfer, FSL and AFNI installed.
+In addition, one may need to copy the required brain templates to FSL directory:
+```
+cp templates/MNI152_T1_3mm*.nii.gz $FSLDIR/data/standard
+```
+
 ## Files structure
 Anatomical and functional MRI has to be in nifti format and in a specific
 folder organization to be recognized by the fcon\_1000 scripts.
