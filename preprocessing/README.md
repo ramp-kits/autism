@@ -2,7 +2,7 @@
 
 ## Files structure
 Anatomical and functional MRI has to be in nifti format and in a specific
-folder organization to be recognized by the fcon_1000 scripts.
+folder organization to be recognized by the fcon\_1000 scripts.
 The script `prepare_fcon.py` can be used to organize folders.
 
 ## Anatomical preprocessing
@@ -16,13 +16,13 @@ We extracted volumes, areas and cortical thicknesses with the script
 
 ## fMRI preprocessing
 
-### F1000 scripts
+### fcon\_1000 scripts
 
 The preprocessing pipeline used for the resting-state fMRI data can be found in
-the folder `scripts_f1000`. One can refer to the file
-`scripts_f1000/batch_process` in which the parameters used for the
+the folder `scripts_fcon1000`. One can refer to the file
+`scripts_fcon1000/batch_process` in which the parameters used for the
 preprocessing are defined. The preprocessing pipeline is defined in the file
-`scripts_f1000/0_preprocess.sh`. The preprocessing pipeline is composed of:
+`scripts_fcon1000/0_preprocess.sh`. The preprocessing pipeline is composed of:
 
 1. Anatomical scan preprocessing: deobliquing, reorienting, and skull
    stripping;
