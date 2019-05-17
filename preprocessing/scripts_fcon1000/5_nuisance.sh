@@ -85,6 +85,7 @@ minVal=`3dBrickStat -min -mask ${func_dir}/${rest}_pp_mask.nii.gz ${func_dir}/${
 
 ## 7. Get residuals
 echo "Running film to get residuals"
+rm -rf ${nuisance_dir}/stats
 film_gls --rn=${nuisance_dir}/stats --noest --sa --ms=5 --in=${func_dir}/${rest}_pp.nii.gz --pd=${nuisance_dir}/nuisance.mat --thr=${minVal}
 
 ## 8. Demeaning residuals and ADDING 100

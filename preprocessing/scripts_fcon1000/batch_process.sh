@@ -15,7 +15,7 @@
 ####################
 ## directory where you put the scripts downloaded from www.nitrc.org/projects/fcon_1000
 ## e.g. /home/fcon_1000/scripts
-scripts_dir=`dirname $0`
+scripts_dir=$(cd `dirname ${BASH_SOURCE[0]}` && pwd)
 
 ###########################
 ## what do you want to run?
