@@ -158,17 +158,22 @@ def _extract_timeseries(func,
         cores.
     """
 
-    masker = _make_masker_from_atlas(atlas, memory=memory,
-                                     memory_level=memory_level)
-    if confounds is not None:
-        confounds_ = np.loadtxt(confounds)
-    else:
-        confounds_ = None
+    try:
+        masker = _make_masker_from_atlas(atlas, memory=memory,
+                                         memory_level=memory_level)
+        if confounds is not None:
+            confounds_ = np.loadtxt(confounds)
+        else:
+            confounds_ = None
 
-    return masker.fit_transform(func, confounds=confounds_)
+        return masker.fit_transform(func, confounds=confounds_)
 
+    except ValueError as e:
+        print(str(e))
 
-N_JOBS = 20
+# pylint: disable=invalid-name
+
+N_JOBS = 4
 
 ###############################################################################
 # Path definition
@@ -182,6 +187,7 @@ subjects_path = []
 for pdata in PATH_TO_DATA:
     subjects_path += glob.glob(pdata)
 subjects_path = sorted(subjects_path)
+subjects_path = [sp for sp in subjects_path if isdir(sp)]
 
 PATH_TO_RESTING_STATE = 'session_1/rest_1/rest_res2standard.nii.gz'
 PATH_TO_MOTION_CORRECTION = 'session_1/rest_1/rest_mc.1D'
@@ -233,9 +239,13 @@ for atlas, atlas_descr in zip(ATLASES, ATLASES_DESCR):
             _extract_timeseries)(func, atlas=atlas, confounds=None)
         for func, confounds in zip(dataset.func, dataset.motion))
 
-    for ts, subject_id, original_confound in zip(time_series,
-                                                 dataset.subject_id,
-                                                 dataset.motion):
+    for ts, subject_id, rp, original_confound in zip(time_series,
+                                                     dataset.subject_id,
+                                                     dataset.run,
+                                                     dataset.motion):
+        # skip subjects for which time series extraction did not work
+        if ts is None:
+            continue
         # store the time series
         path_subject = join(PATH_OUTPUT, atlas_descr, subject_id, rp)
         if not exists(path_subject):
