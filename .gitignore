@@ -1,6 +1,8 @@
 *.pyc
 *.profile
 
+.DS_Store
+
 *.egg-info
 .cache
 *__pycache__
