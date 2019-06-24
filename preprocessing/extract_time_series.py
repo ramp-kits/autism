@@ -42,6 +42,8 @@ from shutil import copy
 
 import numpy as np
 import pandas as pd
+import matplotlib
+matplotlib.use('Agg')   # for matplotlib to work in a shell only environment
 import matplotlib.pyplot as plt
 from joblib import Parallel, delayed
 
