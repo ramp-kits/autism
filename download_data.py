@@ -72,6 +72,8 @@ def _download_fmri_data(atlas):
     print('Downloading the data from {} ...'.format(ARCHIVE[atlas]))
     output_file = os.path.abspath(
         os.path.join('.', 'data', 'fmri', atlas + '.zip'))
+    import ssl
+    ssl._create_default_https_context = ssl._create_unverified_context
     urlretrieve(ARCHIVE[atlas], filename=output_file)
     atlas_directory = os.path.abspath(os.path.join('.', 'data', 'fmri'))
     _check_and_unzip(output_file, atlas, atlas_directory)
