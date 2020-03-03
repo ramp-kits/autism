@@ -50,3 +50,5 @@ www.nitrc.org/projects/fcon_1000
 The script `extract_time_series.py` was used to extract the time-series from
 the preprocessed fMRI data.
 
+The script `get_tr.sh` was used to extract repetition time.
+
