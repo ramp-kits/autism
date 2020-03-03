@@ -59,7 +59,6 @@ def _read_data(path, filename):
                    df_fmri_qc, df_fmri_tr], axis=1)
     X = X.loc[subject_id[0]]
     y = X['participants_asd']
-    y = y.rename(columns={'participants_asd': _target_column_name})
     X = X.drop('participants_asd', axis=1)
 
     return X, y.values
