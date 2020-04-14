@@ -7,8 +7,9 @@ dependencies:
   - pandas>=0.21
   - jupyter
   - matplotlib
-  - scikit-learn>=0.19
+  - scikit-learn>=0.19,<=0.21
   - seaborn
   - nilearn
+  - cloudpickle
   - pip:
-      - https://api.github.com/repos/paris-saclay-cds/ramp-workflow/zipball/master
+    - https://api.github.com/repos/paris-saclay-cds/ramp-workflow/zipball/0.2.1
