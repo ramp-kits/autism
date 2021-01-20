@@ -1,5 +1,6 @@
 import os
 
+import numpy as np
 import pandas as pd
 import rampwf as rw
 
@@ -72,3 +73,8 @@ def get_train_data(path='.'):
 def get_test_data(path='.'):
     filename = 'test.csv'
     return _read_data(path, filename)
+
+
+def save_submission(y_pred, data_path, output_path, suffix):
+    np.savetxt(os.path.join(output_path, 'y_pred_{}.csv'.format(suffix)),
+               y_pred)
