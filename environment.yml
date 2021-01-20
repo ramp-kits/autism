@@ -11,5 +11,6 @@ dependencies:
   - seaborn
   - nilearn
   - cloudpickle
+  - pip
   - pip:
     - https://api.github.com/repos/paris-saclay-cds/ramp-workflow/zipball/0.2.1
