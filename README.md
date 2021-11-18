@@ -6,15 +6,15 @@
 
 This starting kit requires Python and the following dependencies:
 
-* `numpy`
+* `numpy<1.20`
 * `scipy`
-* `pandas`
-* `scikit-learn`
+* `pandas>=0.21`
+* `scikit-learn>=0.19,<=0.21`
 * `matplolib`
 * `seaborn`
 * `nilearn`
 * `jupyter`
-* `ramp-workflow`
+* `ramp-workflow==0.2.1`
 
 Therefore, we advise you to install [Anaconda
 distribution](https://www.anaconda.com/download/) which include almost all
