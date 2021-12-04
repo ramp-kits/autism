@@ -4,13 +4,13 @@ channels:
 dependencies:
   - scipy
   - numpy<1.20
-  - pandas>=0.21,<=1.1
+  - pandas>=0.21,<1.2
   - jupyter
-  - matplotlib<=3.2
-  - scikit-learn>=0.19,<=0.21
+  - matplotlib<3.3
+  - scikit-learn>=0.19,<0.22
   - seaborn
-  - nilearn<=0.8
-  - nibabel<=2.5
+  - nilearn<0.9
+  - nibabel<2.6
   - cloudpickle
   - pip
   - pip:
