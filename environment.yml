@@ -2,15 +2,14 @@ name: autism
 channels:
   - conda-forge
 dependencies:
-  - scipy
   - numpy<1.20
-  - pandas>=0.21,<1.2
-  - jupyter
-  - matplotlib<3.3
+  - scipy
+  - pandas>=0.21
   - scikit-learn>=0.19,<0.22
+  - nilearn<0.8
+  - matplotlib
   - seaborn
-  - nilearn<0.9
-  - nibabel<2.6
+  - jupyter
   - cloudpickle
   - pip
   - pip:

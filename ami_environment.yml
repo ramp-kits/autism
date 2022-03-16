@@ -5,13 +5,12 @@ channels:
 dependencies:
   - scipy
   - numpy<1.20
-  - pandas>=0.21,<1.2
+  - pandas>=0.21
   - jupyter
-  - matplotlib<3.3
+  - matplotlib
   - scikit-learn>=0.19,<0.22
   - seaborn
-  - nilearn<0.9
-  - nibabel<2.6
+  - nilearn<0.8
   - keras
   - tensorflow
   - pytorch-cpu

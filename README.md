@@ -10,9 +10,9 @@ This starting kit requires Python and the following dependencies:
 * `scipy`
 * `pandas>=0.21`
 * `scikit-learn>=0.19,<=0.21`
+* `nilearn<0.8`
 * `matplolib`
 * `seaborn`
-* `nilearn`
 * `jupyter`
 * `ramp-workflow==0.2.1`
 

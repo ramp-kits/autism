@@ -1,11 +1,10 @@
-numpy
+numpy<1.20
 scipy
-pandas>=0.21,<1.2
+pandas>=0.21
 scikit-learn>=0.19,<0.22
-nilearn<0.9
-nibabel<2.6
-matplotlib<3.3
+nilearn<0.8
+matplotlib
 seaborn
 jupyter
-git+git://github.com/paris-saclay-cds/ramp-workflow.git@0.2.1#egg=ramp-workflow
 cloudpickle
+git+git://github.com/paris-saclay-cds/ramp-workflow.git@0.2.1#egg=ramp-workflow
