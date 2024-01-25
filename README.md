@@ -16,6 +16,9 @@ This starting kit requires Python 3.9 and the following dependencies:
 * `ramp-workflow==0.2.1`
 
 
+You will need to have python 3.9 version have installed. Also make shure that you have developer tools for python all installed. For example for Ubuntu 22.04 you will need to have installed `python3.9`,  `python3.9-venv`, `python3.9-dev` and `build-essential`.
+
+
 Firstlly make new virtual enviroment with
 ```
 python3.9 -m venv VENV_NAME
