@@ -59,10 +59,10 @@ def _read_data(path, filename):
     X = pd.concat([df_participants, df_anatomy, df_anatomy_qc, df_fmri,
                    df_fmri_qc, df_fmri_tr], axis=1)
     X = X.loc[subject_id[0]]
-    y = X['participants_asd']
-    X = X.drop('participants_asd', axis=1)
-
-    return X, y.values
+    # y = X['participants_asd']
+    # X = X.drop('participants_asd', axis=1)
+    #return X #, y
+    return X
 
 
 def get_train_data(path='.'):
